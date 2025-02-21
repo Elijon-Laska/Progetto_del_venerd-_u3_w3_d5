@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import SearchBar from "./SearchBar";
 import logo from "../assets/logo/logo.png";
 
 const Sidebar = () => {
+  const likedSongs = useSelector((state) => state.likedSongs);
+
   const signUpButtonStyle = {
     backgroundColor: "white",
     color: "black",
@@ -54,6 +57,14 @@ const Sidebar = () => {
                 <li>
                   <SearchBar />
                 </li>
+              </ul>
+              <ul style={{ padding: 0 }}>
+                {likedSongs.map((song) => (
+                  <li key={song.id} className="nav-item nav-link d-flex align-items-center">
+                    <img src={song.album.cover_small} alt={song.title} style={{ width: "30px", marginRight: "10px" }} />
+                    {song.title}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

@@ -27,7 +27,7 @@ const MusicSection = ({ artistName, sectionId }) => {
   }, [artistName, dispatch]);
 
   const albumCard = (singleSong) => {
-    const isLiked = likedSongs.includes(singleSong.id);
+    const isLiked = likedSongs.some((song) => song.id === singleSong.id);
     return (
       <div className="col text-center" key={singleSong.id}>
         <img
@@ -41,7 +41,7 @@ const MusicSection = ({ artistName, sectionId }) => {
           <br />
           Artist: {singleSong.artist.name}
         </p>
-        <button onClick={() => dispatch(toggleLikeSong(singleSong.id))}>{isLiked ? "❤️" : "♡"}</button>
+        <button onClick={() => dispatch(toggleLikeSong(singleSong))}>{isLiked ? "❤️" : "♡"}</button>
       </div>
     );
   };

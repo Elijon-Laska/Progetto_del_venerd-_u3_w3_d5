@@ -19,7 +19,7 @@ export const setCurrentSong = (song) => ({
   payload: song,
 });
 
-export const toggleLikeSong = (songId) => ({
+export const toggleLikeSong = (song) => ({
   type: TOGGLE_LIKE_SONG,
-  payload: songId,
+  payload: song,
 });

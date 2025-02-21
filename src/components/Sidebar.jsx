@@ -42,7 +42,7 @@ const Sidebar = () => {
             <div className="navbar-nav">
               <ul style={{ padding: 0 }}>
                 <li>
-                  <a className="nav-item nav-link d-flex align-items-center" href="#">
+                  <a className="nav-item nav-link d-flex align-items-center" href="index.html">
                     <i className="bi bi-house-door-fill"></i>&nbsp; Home
                   </a>
                 </li>
